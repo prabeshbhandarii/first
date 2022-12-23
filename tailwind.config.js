@@ -17,10 +17,4 @@ module.exports = {
     },
 
     plugins: [require('@tailwindcss/forms')],
-
-    templateFiles:[
-        './src/templates/**/*.html',
-        './src/templates/**/*.njk',
-        './src/templates/**/*.hbs',
-    ],
 };
