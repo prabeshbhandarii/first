@@ -38,9 +38,16 @@
                                 </button>
                             </x-slot>
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('chirp.edit', $chirp)">
+                                <x-dropdown-link :href="route('chirps.edit', $chirp)">
                                     {{__('Edit')}}
                                 </x-dropdown-link>
+                                <form action="{{ route('chirps.destroy', $chirp) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <x-dropdown-link :href="route('chirps.destroy', $chirp)" onclick="event.preventDefault(); this.closet('form').submit();">
+                                        {{__('Delete')}}
+                                    </x-dropdown-link>
+                                </form>
                             </x-slot>
                         </x-dropdown>
                     @endif
